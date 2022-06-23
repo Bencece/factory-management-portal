@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server for factory-management-portal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bencece/factory-management-portal.git"
+  },
+  "keywords": [
+    "server",
+    "web",
+    "nodejs"
+  ],
+  "author": "Bencece",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bencece/factory-management-portal/issues"
+  },
+  "homepage": "https://github.com/Bencece/factory-management-portal#readme"
+}
