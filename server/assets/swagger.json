@@ -1,0 +1,20 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "description": "REST API for the web based portal to support the productivity of a concrete factory machine",
+        "version": "1.0.0",
+        "title": "MGM-PORTAL API",
+        "termsOfService": "#",
+        "contact": {
+            "email": "zahoranbence@hotmail.com"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [],
+    "schemes": ["http"],
+    "paths": {},
+    "components": {},
+    "schemas": {},
+    "security": {}
+}

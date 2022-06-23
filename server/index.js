@@ -4,6 +4,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
 const conn = require("./services/db");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./assets/swagger.json");
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -13,9 +15,8 @@ app.use(bodyParser.json());
 const authRouter = require("./routes/auth");
 app.use("/auth", authRouter);
 
-app.get("/", (req, res) => {
-    res.send("Hello World!");
-});
+//Swagger
+app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 conn.sync();
 
