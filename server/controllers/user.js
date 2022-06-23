@@ -1,13 +1,15 @@
 const User = require("../models/user");
+const { hashPassword } = require("../services/security");
 
-const createUser = (email, firstName, lastName, password) => {
+const createUser = async (email, firstName, lastName, password) => {
     //CREATE user with password
     console.log(email, firstName, lastName, password);
+    var hash = await hashPassword(password);
     return User.create({
         email: email,
         firstName: firstName,
         lastName: lastName,
-        password: password,
+        password: hash,
     }).then(async (user) => {
         return user;
     });
