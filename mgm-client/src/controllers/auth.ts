@@ -1,4 +1,5 @@
 import connection from "../services/connection";
+import { AxiosResponse } from "axios";
 
 export function loginController(email: string, password: string) {
     //Send request to server for login method
@@ -7,7 +8,7 @@ export function loginController(email: string, password: string) {
             email: email,
             password: password,
         })
-        .then((response: Response) => {
+        .then((response: AxiosResponse) => {
             return response;
         })
         .catch((error: any) => {
