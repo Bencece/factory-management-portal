@@ -1,4 +1,5 @@
 require("dotenv").config();
+const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
@@ -16,7 +17,28 @@ const comparePassword = (password, hash) => {
     });
 };
 
+const generateAccessToken = (tokenData) => {
+    //Generate access token based on secret
+    return new Promise((resolve, reject) => {
+        jwt.sign(
+            tokenData,
+            process.env.ACCESS_TOKEN_SECRET,
+            {
+                expiresIn: "60m",
+            },
+            (err, token) => {
+                if (err || !token) {
+                    console.log(err);
+                    reject(err);
+                }
+                resolve(token);
+            }
+        );
+    });
+};
+
 module.exports = {
     hashPassword,
     comparePassword,
+    generateAccessToken,
 };
