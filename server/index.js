@@ -11,6 +11,10 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //Routers:
+//Users:
+const userRouter = require("./routes/user");
+app.use("/user", userRouter);
+
 //Auth
 const authRouter = require("./routes/auth");
 app.use("/auth", authRouter);
