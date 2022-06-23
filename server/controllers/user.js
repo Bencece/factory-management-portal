@@ -1,11 +1,13 @@
-const { User } = require("../models/user");
+const User = require("../models/user");
 
 const createUser = (email, firstName, lastName, password) => {
     //CREATE user with password
+    console.log(email, firstName, lastName, password);
     return User.create({
         email: email,
         firstName: firstName,
         lastName: lastName,
+        password: password,
     }).then(async (user) => {
         return user;
     });
